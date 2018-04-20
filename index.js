@@ -1,7 +1,7 @@
-//²úÆ·¶ÔÏó
-/*¶ÔÏóÄÚÈçºÎÊ¹ÓÃ¶ÔÏóµÄÊôĞÔºÍ·½·¨£ºthis£¬¶ÔÏóÍâÈçºÎÊ¹ÓÃ£ºÏÈÊµÀı»¯£¬ºóÓÃµãÓï·¨*/
+//äº§å“å¯¹è±¡
+/*å¯¹è±¡å†…å¦‚ä½•ä½¿ç”¨å¯¹è±¡çš„å±æ€§å’Œæ–¹æ³•ï¼šthisï¼Œå¯¹è±¡å¤–å¦‚ä½•ä½¿ç”¨ï¼šå…ˆå®ä¾‹åŒ–ï¼Œåç”¨ç‚¹è¯­æ³•*/
 function Product() {
-    /*ÊôĞÔ ĞĞÎª*/
+    /*å±æ€§ è¡Œä¸º*/
     this.name ='';
     this.price='';
     this.description = '';
@@ -16,12 +16,12 @@ Product.prototype={
         str+='<dl>'
             str+='<dt><a><img src="'+this.image+'" width="384" height="225" /></a></dt>'
             str+='<dd>'
-                str+='<span><a><em>'+this.zhekou+'ÕÛ/</em>'+this.name+'</a></span>'
+                str+='<span><a><em>'+this.zhekou+'æŠ˜/</em>'+this.name+'</a></span>'
             str+='</dd>'
             str+='<dd class="price">'
-                str+='<em>£¤'+this.price+'</em>'
-                str+='<del>£¤'+this.youhuijia+'</del>'
-                str+='<i>ÊÛÁ¿£º'+this.sales+'</i>'
+                str+='<em>ï¿¥'+this.price+'</em>'
+                str+='<del>ï¿¥'+this.youhuijia+'</del>'
+                str+='<i>å”®é‡ï¼š'+this.sales+'</i>'
             str+='</dd>'
         str+='</dl>'
         return str;
@@ -31,45 +31,43 @@ Product.prototype={
     }
 }
 
-/*´î»ıÄ¾¿ª·¢ -- ´úÂë¿É¶ÁĞÔ¼«¸ß*/
+/*æ­ç§¯æœ¨å¼€å‘ -- ä»£ç å¯è¯»æ€§æé«˜*/
 window.onload=function() {
-  /*¼ÙÉèÕâÊÇajax»ñÈ¡µÄjsonÊı¾İ -- ¼ÙÉèÕâÊÇºóÌ¨¸øÄãµÄÊı¾İ*/
+  /*å‡è®¾è¿™æ˜¯ajaxè·å–çš„jsonæ•°æ® -- å‡è®¾è¿™æ˜¯åå°ç»™ä½ çš„æ•°æ®*/
 
 
-    /*ÊµÀı1*/
+    /*å®ä¾‹1*/
     var product1 = new Product()
     product1.name = 'SKII'
-    product1.price = 1111
-    product1.youhuijia = 1000
-    product1.sales = 300
+    product1.price = 999
+    product1.youhuijia = 888
+    product1.sales = 200
     product1.zhekou = 3.5
     product1.image = 'img/boutque10_r2_c2.jpg'
 
-    /*ÊµÀı2*/
+    /*å®ä¾‹2*/
     var product2 = new Product()
-    product2.name = 'ÓñÀ¼ÓÍ'
+    product2.name = 'ç‰å…°æ²¹'
     product2.price = 1111
     product2.youhuijia = 1000
-    product2.sales = 300
+    product2.sales = 100
     product2.zhekou = 3.5
-    product2.image = 'img/boutque10_r2_c2.jpg'
+    product2.image = 'img/1_04739613064003932_420.jpg'
 
-    /*ÊµÀı3*/
+    /*å®ä¾‹3*/
     var product3 = new Product()
-    product3.name = 'À¼Ş¢'
+    product3.name = 'å…°è”»'
     product3.price = 1111
     product3.youhuijia = 1000
     product3.sales = 300
     product3.zhekou = 3.5
-    product3.image = 'img/boutque10_r2_c2.jpg'
+    product3.image = 'img/boutque01_r2_c2.jpg'
 
 
-
-    /*±íÊ¾ÓĞ¶à¸ö²úÆ·  ÎÒÃÇĞèÒª¶¨Òå¶à¸öÊµÀı*/
+    /*è¡¨ç¤ºæœ‰å¤šä¸ªäº§å“  æˆ‘ä»¬éœ€è¦å®šä¹‰å¤šä¸ªå®ä¾‹*/
     var products = [product1,product2,product3]
 
-    /*Ç°¶Ë´úÂë*/
-    /*Ç°ºóÌ¨¿ª·¢²»Ó°Ïì£¬ÎÒÃÇ²»±ØµÈ´ıºó¶ËÈËÔ±¸øÎÒÃÇÊı¾İ*/
+    /*å‰ç«¯ä»£ç */
     var str=''
     for(var i = 0,len=products.length;i<len;i++) {
         str+= products[i].bindDom()
@@ -77,4 +75,3 @@ window.onload=function() {
     var container = document.getElementById('container')
     container.innerHTML=str
 }
-
